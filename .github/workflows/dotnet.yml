@@ -23,6 +23,6 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore ExampleBlazorApp/ExampleBlazorApp.sln
     - name: Build
-      run: dotnet build --no-restore restore ExampleBlazorApp/ExampleBlazorApp.csproj
+      run: dotnet build --no-restore ExampleBlazorApp/ExampleBlazorApp.sln
     - name: Test
       run: dotnet test --no-build --verbosity normal
