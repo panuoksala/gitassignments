@@ -56,7 +56,7 @@ jobs:
         run: dotnet build ExampleBlazorApp/ExampleBlazorApp.sln --configuration Release # Remember to put path here also
 
       - name: dotnet publish
-        run: dotnet publish -c Release -o ExampleBlazorApp/ExampleBlazorApp.sln # And here...
+        run: dotnet publish ExampleBlazorApp/ExampleBlazorApp.sln -c Release -o ${{env.DOTNET_ROOT}}/myapp  # And here as first parameter
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v3
