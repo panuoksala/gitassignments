@@ -21,7 +21,7 @@ name: Build and deploy ASP.Net Core app to an Azure Web App
 
 env:
   AZURE_WEBAPP_NAME: blazor-app-panu    # set this to the name of your Azure Web App
-  AZURE_WEBAPP_PACKAGE_PATH: 'ExampleBlazorApp'      # Change this into folder that contains the solution file (.sln)
+  AZURE_WEBAPP_PACKAGE_PATH: '.'      # We can use default here
   DOTNET_VERSION: '7.0.x'                 # Use 7.0.x here
 
 on:
