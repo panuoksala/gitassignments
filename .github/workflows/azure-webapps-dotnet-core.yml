@@ -95,6 +95,6 @@ jobs:
     steps:
       - name: The demo step has failed
         run: exit 1
-        if: ${{STATUS_CODE}} != '200'
+        if: ${{env.STATUS_CODE}} != '200'
         
               
