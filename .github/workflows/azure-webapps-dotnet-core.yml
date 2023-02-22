@@ -94,7 +94,7 @@ jobs:
     steps:
       - name: Run smoke test
         run: |
-              CODE=`curl ${{ steps.deploy-to-webapp.outputs.webapp-url }}`
+              CODE=`curl https://blazor-app-panu.azurewebsites.net`
               if [ $CODE!="200" ] 
               then
                   echo "FAILURE"
