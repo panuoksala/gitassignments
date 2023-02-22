@@ -23,7 +23,7 @@ env:
   AZURE_WEBAPP_NAME: blazor-app-panu    # set this to the name of your Azure Web App
   AZURE_WEBAPP_PACKAGE_PATH: '.'      # We can use default here
   DOTNET_VERSION: '7.0.x'                 # Use 7.0.x here
-  STATUS_CODE: (curl -o /dev/null -s -w "%{http_code}\n" http://localhost)
+  STATUS_CODE: ''
 
 on:
   push:
@@ -93,7 +93,9 @@ jobs:
     needs: deploy
     
     steps:
-      - name: The demo step has failed
+      - name: Smoke test
+        run: curl -o /dev/null -s -w "%{http_code}\n" https://blazor-app-panu.azurewebsites.net >> $STATUS_CODE
+      - name: Check status code result
         run: exit 1
         if: ${{env.STATUS_CODE}} != '200'
         
