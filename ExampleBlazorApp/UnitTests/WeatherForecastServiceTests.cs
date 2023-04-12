@@ -8,7 +8,7 @@ namespace UnitTests
         public async Task GetForecastAsync_ReturnsFiveRandomForecasts()
         {
             // Arrange
-            var service = new WeatherForecastService();
+            var service = new WeatherForecastService();2
 
             // Act
             var forecasts = await service.GetForecastAsync(new DateOnly(2023,01,01));
