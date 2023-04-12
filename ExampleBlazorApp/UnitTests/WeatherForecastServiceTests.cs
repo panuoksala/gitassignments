@@ -12,7 +12,7 @@ namespace UnitTests
 
             // Act
             var forecasts = await service.GetForecastAsync(new DateOnly(2023,01,01));
-            234
+            
             // Assert
             Assert.Equal(5, forecasts.Length);
         }
